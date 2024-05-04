@@ -1,0 +1,21 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+}
+
+.nav header{}
+
+.ul{
+    display: flex;
+}
+.ul li{
+padding: 0 25px;
+}
