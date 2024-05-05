@@ -8,6 +8,13 @@ ul ,li{
 }
 
 .container{
-  width: 1200px;
+  width: 1400px;
   margin:  auto;
+  padding-left: 50px;
+}
+.bg{
+  background: #0F1014;
+}
+.bt{
+  margin-top: 60px;
 }

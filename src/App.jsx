@@ -1,7 +1,7 @@
 
 import Layout from './Layout/Layout'
 import Hero from "./components/hero/Hero.jsx";
-import Test from "./components/test/Test.jsx";
+
 
 
 const App = () => {
@@ -9,7 +9,7 @@ const App = () => {
     <div>
       <Hero/>
       <Layout/>
-      <Test/>
+
     </div>
   )
 }
