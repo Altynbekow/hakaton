@@ -7,7 +7,7 @@ import Hero from "./components/hero/Hero.jsx";
 const App = () => {
   return (
     <div>
-      <Hero/>
+
       <Layout/>
 
     </div>
