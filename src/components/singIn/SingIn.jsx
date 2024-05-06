@@ -1,17 +1,17 @@
 import React from 'react';
 import { Button, Form, Input } from 'antd';
-import { useDispatch } from "react-redux"
-import { postUser } from '../../store/slices/authSlice';
-import style from './SingUp.module.css'
+import { useDispatch, useSelector } from 'react-redux';
+import { loginUser } from '../../store/slices/loginSlice';
+import style from './SingIn.module.css'
 
-
-const SingUp = () => {
+const SingIn = () => {
+    const { dataUser } = useSelector((state) => 
+        state.login)
+        
     const dispatch = useDispatch();
-
-
     const onFinish = (values) => {
-        console.log("Success:", values);
-        dispatch(postUser(values))
+        console.log('Success:', values);
+        dispatch(loginUser(values))
     };
     const onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo);
@@ -19,12 +19,12 @@ const SingUp = () => {
 
     return (
         <Form
-            name="auth"
+            name="basic"
             labelCol={{
                 span: 8,
             }}
             wrapperCol={{
-                span: 16,
+                span: 10,
             }}
             style={{
                 width: '750px',
@@ -43,22 +43,11 @@ const SingUp = () => {
                 rules={[
                     {
                         required: true,
-                        message: 'Please input your username!',
-                    },
-                ]}
-            >
-                <Input placeholder='имя'  className={style['input-style']}/>
-            </Form.Item>
-            <Form.Item
-                
-                rules={[
-                    {
-                        required: true,
                         message: 'Please input your email!',
                     },
                 ]}
             >
-                <Input placeholder='Email'  className={style['input-style']}/>
+                <Input placeholder='Email' className={style['input-style']}/>
             </Form.Item>
 
             <Form.Item
@@ -69,20 +58,8 @@ const SingUp = () => {
                     },
                 ]}
             >
-                <Input.Password placeholder='Пароль' className={style['input-style']}/>
+                <Input.Password placeholder='Password' className={style['input-style']}/>
             </Form.Item>
-
-            <Form.Item
-                rules={[
-                    {
-                        required: true,
-                        message: 'Please input your password!',
-                    },
-                ]}
-            >
-                <Input.Password placeholder='Пароль еще раз' className={style['input-style']}/>
-            </Form.Item>
-
 
 
             <Form.Item
@@ -91,11 +68,11 @@ const SingUp = () => {
                     span: 16,
                 }}
             >
-                <Button className={style.btn} type="primary" htmlType="submit">
-                    Зарегистрироваться
+                <Button  className={style.btn} type="primary" htmlType="submit">
+                    Авторизация 
                 </Button>
             </Form.Item>
         </Form>
     )
 };
-export default SingUp;
+export default SingIn;
