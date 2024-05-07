@@ -1,12 +1,14 @@
 
 import Hero from "../components/hero/Hero.jsx";
 import Order from "../components/order/Order.jsx";
+import Home from "../components/Home/Home.jsx";
 
 const Layout = () => {
   return (
     <div>
-      {/*<Hero/>*/}
+      {/*<Home/>*/}
       <Order />
+      <Hero/>
 
     </div>
   )

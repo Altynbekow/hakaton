@@ -53,6 +53,12 @@
     display: flex;
     flex-wrap: wrap;
     gap: 50px;
+    padding-left: 50px;
+}
+.carty{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
 }
 .post{
     display: flex;

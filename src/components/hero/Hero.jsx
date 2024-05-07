@@ -1,4 +1,3 @@
-
 import cls from './Hero.module.css';
 import logo from '../../assets/logo.png'
 import street from '../../assets/street.png'
@@ -17,13 +16,14 @@ import avon from '../../assets/avon.svg'
 import audi from '../../assets/auditeria.svg'
 import dell from '../../assets/dell.svg'
 
+
+
 import {useState, useEffect} from 'react';
 import axios from 'axios';
 import {Link} from "react-router-dom";
 
 const Hero = () => {
   const [books, setBooks] = useState([]);
-
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -45,12 +45,40 @@ const Hero = () => {
         <button>Выбрать книгу</button>
       </div>
       <div className='container bg'>
-        <h1 style={{marginBottom: '39px', color: 'white', fontSize: '32px'}}>Популярное</h1>
+        <h1 style={{marginBottom: '39px', color: 'white', fontSize: '32px', paddingTop: '104px',marginLeft:'50px'}}>Новинки </h1>
+        <button style={{
+          position: 'absolute',
+          top: '780px',
+          left: '1620px',
+          border: 'none',
+          width: '131px',
+          height: '36px',
+          background: '#EC8F32',
+          color: 'white',
+          borderRadius: '50px'
+
+        }}>Смотреть все
+        </button>
+        <div className={cls.cart}>
+          {books.slice(5, 10).map(book => (
+            <li key={book.id}>
+              {/*<Link to={`/books/${book.id}`}>*/}
+              <img style={{borderRadius: '20px',}} className={cls.cartimg} src={book.avatar} alt=""/>
+              <p style={{color: '#ADADAD'}}>{book.author}</p>
+              <p style={{color: '#FFFFFF', fontSize: '16px'}}>{book.name}</p>
+              {/*</Link>*/}
+            </li>
+          ))}
+        </div>
+      </div>
+      <div className='container bg'>
+        <h1 style={{marginBottom: '39px', color: 'white', fontSize: '32px', paddingTop: '104px',marginLeft:'50px'}}>Популярное</h1>
         <div className={cls.cart}>
           {books.slice(0, 5).map(book => (
             <li key={book.id}>
               {/*<Link to={`/books/${book.id}`}>*/}
-              <img style={{borderRadius: '20px'}} className={cls.cartimg} src={book.avatar} alt=""/>
+              <img style={{borderRadius: '20px',}} className={cls.cartimg} src={book.avatar} alt=""/>
+
               <p style={{color: '#ADADAD'}}>{book.author}</p>
               <p style={{color: '#FFFFFF', fontSize: '16px'}}>{book.name}</p>
               {/*</Link>*/}
@@ -59,11 +87,12 @@ const Hero = () => {
         </div>
         <div className={'container'}>
           <h1 style={{marginBottom: '39px', color: 'white', marginTop: '97px'}}>Выбор редакции</h1>
-          <div className={cls.cart}>
+          <div className={cls.carty}>
             {books.slice(5, 10).map(book => (
               <li key={book.id}>
                 {/*<Link to={`/books/${book.id}`}>*/}
                 <img style={{borderRadius: '20px'}} className={cls.cartimg} src={book.avatar} alt=""/>
+
                 <p style={{color: '#ADADAD'}}>{book.author}</p>
                 <p style={{color: '#FFFFFF', fontSize: '16px'}}>{book.name}</p>
                 {/*</Link>*/}
@@ -77,10 +106,11 @@ const Hero = () => {
             color: 'white',
             marginTop: '97px',
             display: "flex",
-            gap: '15px'
+            gap: '15px',
+            // marginLeft:'50px'
           }}>Новинки <span style={{color: '#EC8F32'}}>Популярное</span> <span
             style={{color: '#EC8F32'}}>Выбор редакции</span></h1>
-          <div className={cls.cart}>
+          <div className={cls.carty}>
             {books.slice(5, 10).map(book => (
               <li key={book.id}>
                 {/*<Link to={`/books/${book.id}`}>*/}
@@ -93,7 +123,7 @@ const Hero = () => {
           </div>
         </div>
         <div className={'container bt'}>
-          <div className={cls.cart}>
+          <div className={cls.carty}>
             {books.slice(0, 5).map(book => (
               <li key={book.id}>
                 {/*<Link to={`/books/${book.id}`}>*/}
@@ -128,28 +158,28 @@ const Hero = () => {
         </div>
         <div className={'container'}>
           <div className={cls.cartochka}>
-          <div className={cls.br}>
-            <img  style={{marginLeft:'35px', marginTop:'50px', position:'absolute'}} src={micro} alt=""/>
-            <p >Все лучшие новинки нон фикшн<br/>
-              книг и образовательные саммари<br/>
-              всегда под рукой.</p>
-          </div>
-          <div className={cls.br}>
-            <img  style={{marginLeft:'35px', marginTop:'50px', position:'absolute'}} src={kal} alt=""/>
-            <p>Аудиокнига по дороге на работу<br/>
-              и обратно, подарит вам почти <br/>
-              месяц чтения за год</p>
-          </div>
-          <div className={cls.br}>
-            <img  style={{marginLeft:'35px', marginTop:'50px', position:'absolute'}} src={music} alt=""/>
-            <p>Аудиокниги позволяют «читать»<br/>
-              несколько часов в день без отрыва <br/>
-              от текущих дел.</p>
-          </div>
-          <div className={cls.br}>
-            <img  style={{marginLeft:'35px', marginTop:'50px', position:'absolute'}} src={book} alt=""/>
-            <p>Лучшие книги и аудиоспектакли<br/>в живом исполнении</p>
-          </div>
+            <div className={cls.br}>
+              <img style={{marginLeft: '35px', marginTop: '50px', position: 'absolute'}} src={micro} alt=""/>
+              <p>Все лучшие новинки нон фикшн<br/>
+                книг и образовательные саммари<br/>
+                всегда под рукой.</p>
+            </div>
+            <div className={cls.br}>
+              <img style={{marginLeft: '35px', marginTop: '50px', position: 'absolute'}} src={kal} alt=""/>
+              <p>Аудиокнига по дороге на работу<br/>
+                и обратно, подарит вам почти <br/>
+                месяц чтения за год</p>
+            </div>
+            <div className={cls.br}>
+              <img style={{marginLeft: '35px', marginTop: '50px', position: 'absolute'}} src={music} alt=""/>
+              <p>Аудиокниги позволяют «читать»<br/>
+                несколько часов в день без отрыва <br/>
+                от текущих дел.</p>
+            </div>
+            <div className={cls.br}>
+              <img style={{marginLeft: '35px', marginTop: '50px', position: 'absolute'}} src={book} alt=""/>
+              <p>Лучшие книги и аудиоспектакли<br/>в живом исполнении</p>
+            </div>
           </div>
         </div>
         <div className={'container'}>
