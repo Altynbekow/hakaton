@@ -1,0 +1,78 @@
+.overlay {
+    position: fixed;
+    inset: 0;
+    background-color: #00000090;
+    z-index: 999;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.alert {
+    width: 515px;
+    height: 285px;
+    border-radius: 30px;
+    background-color: #1F1B1C;
+}
+.cros {
+    width: 19px;
+    height: 19px;
+    margin-left: 22rem;
+    margin-top: 1rem;
+}
+.h3text {
+    font-family: Ubuntu;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 24.13px;
+    text-align: left;
+    color: #FFFFFF;    
+    margin-left: 2rem;
+}
+.div {
+    width: 400px;
+    height: 54px;
+    border-radius: 12px;
+    background-color:  #101010;
+    margin-top: 1rem;
+    margin-left: 3rem;
+    display: flex;
+}
+.name {
+    display: flex;
+}
+.note {
+    width: 14px;
+    height: 17px;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    position: absolute;
+}
+.musor {
+    width: 16px;
+    height: 18px;
+    margin-left: 23rem;
+    margin-top: 1rem;
+    position: absolute;
+}
+.h4text {
+    font-family: Ubuntu;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16.09px;
+    text-align: left;
+    color: #ADADAD;
+
+}
+.textp {
+    font-family: Ubuntu;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 13.79px;
+    text-align: left;
+    color: #ADADAD;    
+}
+.text {
+    position: absolute;
+    margin-left: 3rem;
+    margin-top: -1rem;
+}
