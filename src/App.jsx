@@ -1,15 +1,12 @@
-import React from 'react'
-import Header from './Header/Header'
-import Layout from './Layout/Layout'
-
+import React from 'react';
+import Layout from './Layout/Layout'; // Проверьте путь к Layout.jsx
 
 const App = () => {
   return (
     <div>
-      <Header/>
-      <Layout/>
+      <Layout />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

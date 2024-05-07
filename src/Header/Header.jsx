@@ -1,32 +1,24 @@
-import styles from './Header.module.css'
+import cls from './Header.module.css'
+import auditoria from '../../src/assets/auditoria.svg'
 
+// const menu = ["Как купить", "F.A.Q", "Контакты"]
 const Header = () => {
-    return (
-            <nav className={styles.header}>
-                <div>
-                    <img src="" alt="" />
-                </div>
-                <ul className={styles.ul}>
-                    <li>
-                        <a href="#">Как купить</a>
-                    </li>
+    return <header className="container">   
+        {/* АУДИТОРИЯ */}
+        <img className={cls.logo} src={auditoria} alt="logo" />
+        <nav>
+            <ul className={cls.navlinks}>
+                <li><a href='#'>Как купить</a></li>
+                <li><a href='#'>F.A.Q</a></li>
+                <li><a href='#'>Контакты</a></li>
+            </ul>
+        </nav>
 
-                    <li>
-                        <a href="#"> F.A.Q </a>
-                    </li>
+        <a className='cta' href='a'><button>Регистрация</button></a>
+        <a className='cta' href='a'><button>Войти</button></a>
+    </header>
 
-                    <li>
-                        <a href="#"> Контакты</a>
-                    </li>
-                </ul>
-                <div className={styles.button}>
-                <button>Регистрация</button>
-                <button>Войти</button>
-            </div>
-            </nav>
-           
 
-    )
 }
 
 export default Header
